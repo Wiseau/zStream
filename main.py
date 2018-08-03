@@ -3,13 +3,13 @@ import config
 import esi
 import logging
 from arceus import Arceus
-import zsocket
+from zsocket import ZSocket
 
 logger = logging.getLogger("zStream")
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 Arceus = Arceus()
-socket = zsocket.zsocket()
+socket = ZSocket()
 
 
 def populate_groups():
@@ -68,7 +68,7 @@ def on_open(ws):
 
 
 def on_error(ws, err):
-    Arceus.privmsg(config.channel, "zStream connection failed with error: %s" % err)
+    Arceus.privmsg(config.channel, "zStream failed with error: %s" % err)
 
 
 def on_killmail(ws, killmail):
@@ -86,7 +86,6 @@ if __name__ == "__main__":
     try:
         logger.info("Starting zStream")
         populate_groups()
-        socket = zsocket.zSocket()
         socket.on_killmail = on_killmail
         socket.socket_open = on_open
         socket.socket_error = on_error
