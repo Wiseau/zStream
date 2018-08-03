@@ -1,0 +1,60 @@
+channel = "#kill"
+channel_important = "#minusten"
+
+arceus_url = "http://127.0.0.1:6969/message"
+arceus_token = ""
+
+group_short_names = {
+    'Flag Cruiser': 'FLG',
+    'Prototype Exploration Ship': 'EXP',
+    'Destroyer': 'DSR',
+    'Combat Recon Ship': 'CBR',
+    'Frigate': 'FRG',
+    'Dreadnought': 'DRD',
+    'Industrial': 'IND',
+    'Strategic Cruiser': 'T3',
+    'Capital Industrial Ship': 'RQL',
+    'Carrier': 'CRR',
+    'Command Destroyer': 'CSR',
+    'Black Ops': 'BLOPS',
+    'Command Ship': 'CMD',
+    'Logistics': 'LOGI',
+    'Interdictor': 'DIC',
+    'Supercarrier': 'SPR',
+    'Force Auxiliary': 'FAX',
+    'Attack Battlecruiser': 'ABC',
+    'Blockade Runner': 'BKR',
+    'Electronic Attack Ship': 'EAS',
+    'Exhumer': 'EXR',
+    'Logistics Frigate': 'FLOGI',
+    'Covert Ops': 'COV',
+    'Heavy Assault Cruiser': 'HAC',
+    'Cruiser': 'CRS',
+    'Stealth Bomber': 'BMB',
+    'Force Recon Ship': 'RECON',
+    'Heavy Interdiction Cruiser': 'HIC',
+    'Combat Battlecruiser': 'BC',
+    'Freighter': 'FRT',
+    'Capsule': 'POD',
+    'Titan': 'TIT',
+    'Industrial Command Ship': 'ICS',
+    'Corvette': 'CVT',
+    'Assault Frigate': 'AF',
+    'Expedition Frigate': 'EF',
+    'Tactical Destroyer': 'T3D',
+    'Shuttle': 'SHTL',
+    'Deep Space Transport': 'DST',
+    'Battleship': 'BS',
+    'Interceptor': 'INTY',
+    'Marauder': 'MRDR',
+    'Jump Freighter': 'JF',
+    'Mining Barge': 'BRG'
+}
+
+group_colours = {
+    'DRD': '07',  # orange
+    'CRR': '02',  # blue
+    'FAX': '03',  # green
+    'SPR': '08',  # yellow
+    'TIT': '04'  # red
+}
