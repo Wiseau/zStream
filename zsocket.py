@@ -6,7 +6,7 @@ import json
 from killmail import Killmail
 
 
-class zsocket:
+class zSocket:
     def __init__(self):
         super()
         self.logger = logging.getLogger(__name__)

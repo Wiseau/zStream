@@ -85,8 +85,8 @@ def on_killmail(ws, killmail):
 if __name__ == "__main__":
     try:
         logger.info("Starting zStream")
-        # populate_groups()
-        socket = zsocket.zsocket()
+        populate_groups()
+        socket = zsocket.zSocket()
         socket.on_killmail = on_killmail
         socket.socket_open = on_open
         socket.socket_error = on_error
