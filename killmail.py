@@ -35,6 +35,7 @@ class Killmail:
         self.is_solo = k['zkb']['solo']
         self.is_awox = k['zkb']['awox']
         self.is_npc = k['zkb']['npc']
+        self.is_cyno = self.is_cyno()
 
         self.victim = Victim(k['victim'])
         self.system = esi.get_solar_system(k['solar_system_id'])
@@ -42,6 +43,13 @@ class Killmail:
     def __getattr__(self, item):
         setattr(self, item, self.raw[item])
         return getattr(self, item, self.raw[item])
+
+    def is_cyno(self):
+        self.is_cyno = False
+        for item in self.raw['victim']['items']:
+            if item['item_type_id'] is 21096 and item['flag'] in range(27, 35):
+                self.is_cyno = True
+        return self.is_cyno
 
     def get_value_millified(self, places=0):
         millnames = ['', 'k', 'm', 'b', 't']

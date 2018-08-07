@@ -4,6 +4,9 @@ channel_important = "#minusten"
 arceus_url = "http://127.0.0.1:6969/message"
 arceus_token = ""
 
+discord_webhooks_all = [] #array of webhook url strings
+discord_webhooks_expensive = [] #array of webhook url strings
+
 group_short_names = {
     'Flag Cruiser': 'FLG',
     'Prototype Exploration Ship': 'EXP',
