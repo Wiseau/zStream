@@ -28,7 +28,7 @@ def populate_groups():
     logging.info("Finished getting ship categories from ESI total ship types: %s" % len(esi.ship_group_name))
 
 
-def decourate_discord(killmail):
+def decorate_discord(killmail):
     hook = DiscordHook()
     hook.url = "https://zkillboard.com/kill/%s/" % killmail.id
     hook.color = 275725
@@ -116,20 +116,21 @@ def on_killmail(ws, killmail):
     logger.info("Received kill %s from websocket" % killmail.id)
 
     rule = rules(killmail)
-    irc_content = decorate_irc(killmail)
+    irc = decorate_irc(killmail)
+    discord = decorate_discord(killmail)
     if "super" in rule:
-        Arceus.notice(config.channel, irc_content)
-        Arceus.privmsg(config.channel_important, irc_content)
+        Arceus.notice(config.channel, irc)
+        Arceus.privmsg(config.channel_important, irc)
         for webhook in config.discord_webhooks_all:
-            decourate_discord(killmail).send(webhook)
+            discord.send(webhook)
     else:
-        Arceus.privmsg(config.channel, irc_content)
+        Arceus.privmsg(config.channel, irc)
         for webhook in config.discord_webhooks_all:
-            decourate_discord(killmail).send(webhook)
+            discord.send(webhook)
 
     if "expensive" in rule:
         for webhook in config.discord_webhooks_expensive:
-            decourate_discord(killmail).send(webhook)
+            discord.send(webhook)
 
 
 if __name__ == "__main__":
