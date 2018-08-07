@@ -98,8 +98,14 @@ def rules(killmail):
         if config.group_short_names[killmail.victim.ship.id] in ["TIT", "SPR"]:
             rules.append("super")
 
-    if killmail.value > 1000000000:
+    if killmail.value > 1000000000 and killmail.value < 5000000000:
         rules.append("expensive")
+
+    if killmail.value > 5000000000 and killmail.value < 10000000000:
+        rules.append("5b")  
+
+    if killmail.value > 10000000000:
+        rules.append("10b")   
 
     return rules
 
@@ -130,6 +136,14 @@ def on_killmail(ws, killmail):
 
     if "expensive" in rule:
         for webhook in config.discord_webhooks_expensive:
+            discord.send(webhook)
+
+    if "5b" in rule
+        for webhook in config.discord_webhooks_5b:
+            discord.send(webhook)
+
+    if "10b" in rule
+        for webhook in config.discord_webhooks_10b:
             discord.send(webhook)
 
 
