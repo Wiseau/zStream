@@ -2,7 +2,7 @@ import logging
 import requests
 import json
 
-logger = logging.getLogger('ESI')
+logger = logging.getLogger('DiscordWebhook')
 
 
 class DiscordHook:

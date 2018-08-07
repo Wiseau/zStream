@@ -7,7 +7,7 @@ from arceus import Arceus
 from zsocket import ZSocket
 
 logger = logging.getLogger("zStream")
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 Arceus = Arceus()
 socket = ZSocket()
